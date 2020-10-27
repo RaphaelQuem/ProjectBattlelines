@@ -5,13 +5,18 @@ using UnityEngine;
 
 public class SpotBehavior : MonoBehaviour
 {
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    public bool used;
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("entrou");
-        var unit = collision.otherCollider.gameObject.GetComponent<UnitBehavior>();
+        if (used) return;
+        var unit = collision.gameObject.GetComponent<UnitBehavior>();
 
-        unit.pinTo = this.transform;
+        unit.pinTo = this.gameObject;
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var unit = collision.gameObject.GetComponent<UnitBehavior>();
+        unit.pinTo = null;
     }
 }

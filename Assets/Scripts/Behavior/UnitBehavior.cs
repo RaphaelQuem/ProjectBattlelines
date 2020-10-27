@@ -13,7 +13,7 @@ public class UnitBehavior : MonoBehaviour
     public Vector3 screenPoint;
     public Vector3 offset;
     public bool pinned;
-    public Transform pinTo;
+    public GameObject pinTo;
 
     // Start is called before the first frame update
     void Start()
@@ -49,18 +49,12 @@ public class UnitBehavior : MonoBehaviour
         {
             if (this.pinTo != null)
             {
-                this.transform.position = this.pinTo.position;
+                this.transform.position = this.pinTo.transform.position;
+                this.pinTo.GetComponent<SpotBehavior>().used = true;
             }
             screenPoint = Vector3.zero;
             offset = Vector3.zero;
         }
         dragging = !dragging;
     }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Debug.Log("Odio");
-    }
-
-
-
 }
