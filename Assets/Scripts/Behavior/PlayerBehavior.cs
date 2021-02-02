@@ -9,6 +9,10 @@ public class PlayerBehavior : MonoBehaviour
 
 
     public List<UnitModel> playerHand;
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     // Start is called before the first frame update
     void Start()
     {

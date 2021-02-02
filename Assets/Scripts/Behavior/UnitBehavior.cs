@@ -24,6 +24,8 @@ public class UnitBehavior : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(pinned)
+            return;
         if (dragging)
         {
             Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
@@ -42,8 +44,8 @@ public class UnitBehavior : MonoBehaviour
     {
         if (!dragging)
         {
-            screenPoint = Camera.main.WorldToScreenPoint(transform.position);
-            offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
+            this.screenPoint = Camera.main.WorldToScreenPoint(this.transform.position);
+            this.offset = transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         }
         else
         {
@@ -51,10 +53,11 @@ public class UnitBehavior : MonoBehaviour
             {
                 this.transform.position = this.pinTo.transform.position;
                 this.pinTo.GetComponent<SpotBehavior>().used = true;
+                this.pinned = true;
             }
-            screenPoint = Vector3.zero;
-            offset = Vector3.zero;
+            this.screenPoint = Vector3.zero;
+            this.offset = Vector3.zero;
         }
-        dragging = !dragging;
+        this.dragging = !this.dragging;
     }
 }
