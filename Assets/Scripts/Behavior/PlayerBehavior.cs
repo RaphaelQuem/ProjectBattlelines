@@ -40,7 +40,6 @@ public class PlayerBehavior : MonoBehaviour
             });
             var unit = GameObject.Instantiate(spawnedobj);
             unit.transform.parent = gameObject.transform;
-            unit.transform.localScale = new Vector3(4,4,4);
             unit.transform.position = new Vector3(0,0,0);
         }
 
