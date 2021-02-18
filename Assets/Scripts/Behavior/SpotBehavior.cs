@@ -9,14 +9,22 @@ public class SpotBehavior : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (used) return;
+        ChangePinTo(collision);
+    }
+    private void OnTriggerStay2D(Collider2D collision){
+        if (used) return;
+        ChangePinTo(collision);
+    }
+    void ChangePinTo(Collider2D collision){
         var unit = collision.gameObject.GetComponent<UnitBehavior>();
-
-        unit.pinTo = this.gameObject;
+        if(unit.pinTo == null)
+            unit.pinTo = this.gameObject;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         var unit = collision.gameObject.GetComponent<UnitBehavior>();
-        unit.pinTo = null;
+        if(unit.pinTo == this.gameObject)
+            unit.pinTo = null;
     }
 }

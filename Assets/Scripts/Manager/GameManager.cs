@@ -7,6 +7,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        if (StaticResources.PlayerHandObject == null)
+        {
+            GameObject hand = GameObjectHelper.PlaceNew(PrefabEnum.PlayerHand, Constants.HAND_POSITION);
+            StaticResources.PlayerHandObject = hand;
+        }
+    }
+
+    // Update is called once per frame
+    void Update()
+    { 
+
+    }
+
+    void InstantiateCards(){
         foreach (var unit in StaticResources.UnitPile)
         {
             GameObject spawnedobj = (GameObject)Resources.Load("Prefabs/Unit");
@@ -18,11 +32,5 @@ public class GameManager : MonoBehaviour
             });
             GameObject.Instantiate(spawnedobj);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    { 
-
     }
 }
