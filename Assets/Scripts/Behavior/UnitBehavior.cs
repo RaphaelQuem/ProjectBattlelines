@@ -52,7 +52,8 @@ public class UnitBehavior : MonoBehaviour
             if (this.pinTo != null)
             {
                 this.transform.position = this.pinTo.transform.position;
-                this.pinTo.GetComponent<SpotBehavior>().used = true;
+                var spot = this.pinTo.GetComponent<SpotBehavior>();
+                spot.pinnedUnit = this.model;
                 this.pinned = true;
             }
             this.screenPoint = Vector3.zero;

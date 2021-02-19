@@ -5,7 +5,8 @@ using UnityEngine;
 
 public class SpotBehavior : MonoBehaviour
 {
-    public bool used;
+    public TeamModel ownerTeam;
+    public UnitModel pinnedUnit;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (used) return;
