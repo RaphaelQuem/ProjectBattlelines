@@ -7,13 +7,14 @@ public class SpotBehavior : MonoBehaviour
 {
     public TeamModel ownerTeam;
     public UnitModel pinnedUnit;
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (used) return;
+        if (pinnedUnit != null) return;
         ChangePinTo(collision);
     }
     private void OnTriggerStay2D(Collider2D collision){
-        if (used) return;
+        if (pinnedUnit != null) return;
         ChangePinTo(collision);
     }
     void ChangePinTo(Collider2D collision){
