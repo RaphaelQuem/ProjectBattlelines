@@ -9,8 +9,9 @@ public class BattlelineModel
 
     public int GetTeamPower(TeamModel team)
     {
-        var deployments = this.Deployments.Where(u => u.Hand.Team.Equals(team));
+        var totaldep = this.Deployments.Sum(d => d.Rank);
+        var teamdep = this.Deployments.Where(u => u.Hand.Team.Equals(team)).Sum(d => d.Rank);
 
-        return deployments.Sum(d => d.Rank);
+        return (teamdep / totaldep * 100);
     }
 }
