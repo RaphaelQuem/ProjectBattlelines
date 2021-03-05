@@ -5,10 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BattlelineBehavior : MonoBehaviour
 {
+    public BattlelineModel battleline;
     // Start is called before the first frame update
     void Start()
     {
-        
+        // SHOULD CREATE NEW BATTLE LINE AND ADD IT TO THE BATTLELINE LIST
     }
 
     // Update is called once per frame

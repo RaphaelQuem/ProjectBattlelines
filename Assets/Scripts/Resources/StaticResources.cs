@@ -8,9 +8,13 @@ public static class StaticResources
 {
     private static GameObject playerHandObject;
     private static List<UnitModel> unitPile = InitializeUnitPile();
+    private static List<BattlelineModel> battlelines = new List<BattlelineModel>();
+    private static BattlelineModel currentBattleline;
 
-    public static List<UnitModel> UnitPile { get {return unitPile;} set {unitPile = value;} }
-    public static GameObject PlayerHandObject{get {return playerHandObject;} set{playerHandObject = value;}}
+    public static List<UnitModel> UnitPile { get => unitPile; set => unitPile = value; }
+    public static GameObject PlayerHandObject{get => playerHandObject; set => playerHandObject = value; }
+    public static List<BattlelineModel> Battlelines { get => battlelines; set => battlelines = value; }
+    public static BattlelineModel CurrentBattleline { get => currentBattleline; set => currentBattleline = value; }
 
     public static int MaxHandCards = 5;
 

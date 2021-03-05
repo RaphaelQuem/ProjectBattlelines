@@ -59,17 +59,18 @@
     <Compile Include="Assets\Scripts\Behavior\PlayerBehavior.cs" />
     <Compile Include="Assets\Scripts\Resources\Constants.cs" />
     <Compile Include="Assets\Model\UnitModel.cs" />
+    <Compile Include="Assets\Model\BattlelineModel.cs" />
     <Compile Include="Assets\Scripts\Infra\GameObjectHelper.cs" />
     <Compile Include="Assets\Scripts\Resources\StaticResources.cs" />
     <Compile Include="Assets\Scripts\Behavior\BattleLineExitBehavior.cs" />
     <Compile Include="Assets\Scripts\Behavior\SpotBehavior.cs" />
+    <Compile Include="Assets\Model\TeamModel.cs" />
     <Compile Include="Assets\Scripts\Resources\Enums.cs" />
     <Compile Include="Assets\Scripts\Behavior\BattlelineBehavior.cs" />
     <Compile Include="Assets\Manager\GameManager.cs" />
-    <Compile Include="Assets\Scripts\Behavior\UnitBehavior.cs" />
-    <Compile Include="Assets\Model\BattlelineModel.cs" />
-    <Compile Include="Assets\Model\TeamModel.cs" />
     <Compile Include="Assets\Model\HandModel.cs" />
+    <Compile Include="Assets\Scripts\Behavior\UnitBehavior.cs" />
+    <Compile Include="Assets\Manager\BattlelineManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
