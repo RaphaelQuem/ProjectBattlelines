@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class BattlelineModel
 {
+    public BattlelineModel()
+    {
+        this.Deployments = new List<UnitModel>();
+    }
     public List<UnitModel> Deployments { get; set; }
 
     public int GetTeamPower(TeamModel team)

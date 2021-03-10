@@ -9,7 +9,8 @@ public class BattlelineBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // SHOULD CREATE NEW BATTLE LINE AND ADD IT TO THE BATTLELINE LIST
+        this.battleline = new BattlelineModel();
+        StaticResources.Battlelines.Add(this.battleline);
     }
 
     // Update is called once per frame
