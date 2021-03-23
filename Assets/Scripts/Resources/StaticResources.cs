@@ -15,6 +15,7 @@ public static class StaticResources
     public static GameObject PlayerHandObject{get => playerHandObject; set => playerHandObject = value; }
     public static List<BattlelineModel> Battlelines { get => battlelines; set => battlelines = value; }
     public static BattlelineModel CurrentBattleline { get => currentBattleline; set => currentBattleline = value; }
+    public static bool SwitchedScene { get; internal set; }
 
     public static int MaxHandCards = 5;
 

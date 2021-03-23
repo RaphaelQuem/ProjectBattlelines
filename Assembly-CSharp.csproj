@@ -67,10 +67,12 @@
     <Compile Include="Assets\Model\TeamModel.cs" />
     <Compile Include="Assets\Scripts\Resources\Enums.cs" />
     <Compile Include="Assets\Scripts\Behavior\BattlelineBehavior.cs" />
+    <Compile Include="Assets\Manager\BattlelineManager.cs" />
     <Compile Include="Assets\Manager\GameManager.cs" />
     <Compile Include="Assets\Model\HandModel.cs" />
     <Compile Include="Assets\Scripts\Behavior\UnitBehavior.cs" />
-    <Compile Include="Assets\Manager\BattlelineManager.cs" />
+    <Compile Include="Assets\Model\DeploymentModel.cs" />
+    <Compile Include="Assets\debug.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -7,7 +7,8 @@ public class SpotBehavior : MonoBehaviour
 {
     public TeamModel ownerTeam;
     public UnitModel pinnedUnit;
-    
+    public string Id;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (pinnedUnit != null) return;

@@ -55,6 +55,11 @@ public class UnitBehavior : MonoBehaviour
                 var spot = this.pinTo.GetComponent<SpotBehavior>();
                 spot.pinnedUnit = this.model;
                 this.pinned = true;
+                StaticResources.CurrentBattleline.Deployments.Add(new DeploymentModel
+                {
+                    Unit = this.model,
+                    SpotId = spot.Id
+                });
             }
             this.screenPoint = Vector3.zero;
             this.offset = Vector3.zero;
